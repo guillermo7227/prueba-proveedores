@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Proveedores.API</name>
+    </assembly>
+    <members>
+        <member name="M:Proveedores.API.Controllers.UsuarioController.GetAll">
+            <summary>
+             Obtiene todos los usuarios registrados
+            </summary>
+            <returns>APIResponse</returns>
+        </member>
+        <member name="M:Proveedores.API.Controllers.UsuarioController.GetById(System.String)">
+            <summary>
+             Obtiene un usuario según su id
+            </summary>
+            <param name="id" example="6728438f2f464d00ee9ae80c">Id del usuario</param>
+            <returns>APIResponse</returns>
+        </member>
+        <member name="M:Proveedores.API.Controllers.UsuarioController.GetByEmail(System.String)">
+            <summary>
+             Obtiene un usuario según su email
+            </summary>
+            <param name="email" example="alfredo@gmail.com">Email del usuario</param>
+            <returns>APIResponse</returns>
+        </member>
+        <member name="M:Proveedores.API.Controllers.UsuarioController.Add(Proveedores.API.Models.Usuario)">
+            <summary>
+             Crea un usuario
+            </summary>
+            <param name="usuario">Datos del nuevo usuario (esquema: Usuario)</param>
+            <returns>APIResponse</returns>
+        </member>
+        <member name="M:Proveedores.API.Controllers.UsuarioController.Update(System.String,Proveedores.API.Models.UsuarioUpdateRequest)">
+            <summary>
+             Actualiza un usuario
+            </summary>
+            <param name="id" example="6728438f2f464d00ee9ae80c">Id del usuario</param>
+            <param name="usuario">Datos del usuario (esquema: UsuarioUpdateRequest)</param>
+            <returns>APIResponse</returns>
+        </member>
+        <member name="M:Proveedores.API.Controllers.UsuarioController.ChangePassword(System.String,Proveedores.API.ChangePasswordRequest)">
+            <summary>
+             Cambia la contraseña de un usuario
+            </summary>
+            <param name="id" example="6728438f2f464d00ee9ae80c">Id del usuario</param>
+            <param name="password">Nueva contraseña (esquema: ChangePasswordRequest)</param>
+            <returns>APIResponse</returns>
+        </member>
+        <member name="T:Proveedores.API.ChangePasswordRequest">
+            <summary>
+            Parámetros para cambio de contraseña
+            </summary>
+        </member>
+        <member name="P:Proveedores.API.ChangePasswordRequest.Id">
+            <example>6728438f2f464d00ee9ae80c</example>
+        </member>
+        <member name="P:Proveedores.API.ChangePasswordRequest.Password">
+            <example>MiP@55w0rd123+.</example>
+        </member>
+        <member name="T:Proveedores.API.LoginRequest">
+            <summary>
+            Parámetros para una petición de inicio de sesión
+            </summary>
+        </member>
+        <member name="P:Proveedores.API.LoginRequest.Email">
+            <example>alfredo@gmail.com</example>
+        </member>
+        <member name="P:Proveedores.API.LoginRequest.Password">
+            <example>MiP@55w0rd123+.</example>
+        </member>
+        <member name="T:Proveedores.API.Models.Proveedor">
+            <summary>
+            Modelo de datos para un Proveedor
+            </summary>
+        </member>
+        <member name="P:Proveedores.API.Models.Proveedor.Id">
+            <example>6728438f2f464d00ee9ae80c</example>
+        </member>
+        <member name="P:Proveedores.API.Models.Proveedor.Nombre">
+            <example>Ferretería La Veloz</example>
+        </member>
+        <member name="P:Proveedores.API.Models.Proveedor.NIT">
+            <example>123456789</example>
+        </member>
+        <member name="P:Proveedores.API.Models.Proveedor.Telefono">
+            <example>+573017774455</example>
+        </member>
+        <member name="P:Proveedores.API.Models.Proveedor.Email">
+            <example>laveloz@gmail.com</example>
+        </member>
+        <member name="P:Proveedores.API.Models.Proveedor.Activo">
+            <example>true</example>
+        </member>
+        <member name="T:Proveedores.API.Models.ProveedorDto">
+            <summary>
+            Modelo de vista de un Proveedor
+            </summary>
+        </member>
+        <member name="P:Proveedores.API.Models.ProveedorDto.Id">
+            <example>6728438f2f464d00ee9ae80c</example>
+        </member>
+        <member name="P:Proveedores.API.Models.ProveedorDto.Nombre">
+            <example>Ferretería La Veloz</example>
+        </member>
+        <member name="P:Proveedores.API.Models.ProveedorDto.NIT">
+            <example>123456789</example>
+        </member>
+        <member name="P:Proveedores.API.Models.ProveedorDto.Telefono">
+            <example>+573017774455</example>
+        </member>
+        <member name="P:Proveedores.API.Models.ProveedorDto.Email">
+            <example>laveloz@gmail.com</example>
+        </member>
+        <member name="P:Proveedores.API.Models.ProveedorDto.Activo">
+            <example>true</example>
+        </member>
+        <member name="T:Proveedores.API.Models.APIResponse`1">
+            <summary>
+            Respuesta para una petición
+            </summary>
+        </member>
+        <member name="P:Proveedores.API.Models.APIResponse`1.Status">
+            <example>200</example>
+        </member>
+        <member name="P:Proveedores.API.Models.APIResponse`1.Title">
+            <example>Resultado de la petición</example>
+        </member>
+        <member name="P:Proveedores.API.Models.APIResponse`1.Detail">
+            <example>Completado</example>
+        </member>
+        <member name="P:Proveedores.API.Models.APIResponse`1.Data">
+            <example>Objeto de datos (esquema: Proveedor)</example>
+        </member>
+        <member name="T:Proveedores.API.Models.AuthResponse">
+            <summary>
+            Respuesta para una petición de autenticación
+            </summary>
+        </member>
+        <member name="P:Proveedores.API.Models.AuthResponse.Email">
+            <example>alfredo@gmail.com</example>
+        </member>
+        <member name="P:Proveedores.API.Models.AuthResponse.Nombre">
+            <example>Alfredo Areyanes</example>
+        </member>
+        <member name="P:Proveedores.API.Models.AuthResponse.Token">
+            <example>eyJhbGciOiJIE3MzA3MzkwNTcsImV4cCI6MTczMDc0OTg1NywiaWF0IjoxNzMwNzM5MDU3LCJpc3MiOiJodHRwczovL2xvY2</example>
+        </member>
+        <member name="T:Proveedores.API.Models.Usuario">
+            <summary>
+            Modelo de datos para un Usuario
+            </summary>
+        </member>
+        <member name="P:Proveedores.API.Models.Usuario.Id">
+            <example>6728438f2f464d00ee9ae80c</example>
+        </member>
+        <member name="P:Proveedores.API.Models.Usuario.Nombre">
+            <example>Alfredo Areyanes</example>
+        </member>
+        <member name="P:Proveedores.API.Models.Usuario.Email">
+            <example>alfredo@gmail.com</example>
+        </member>
+        <member name="P:Proveedores.API.Models.Usuario.Password">
+            <example>MiP@55w0rd123+.</example>
+        </member>
+        <member name="P:Proveedores.API.Models.Usuario.Activo">
+            <example>true</example>
+        </member>
+        <member name="P:Proveedores.API.Models.Usuario.Roles">
+            <example>usuario,analista</example>
+        </member>
+        <member name="T:Proveedores.API.Models.UsuarioDto">
+            <summary>
+            Modelo de vista de un Usuario
+            </summary>
+        </member>
+        <member name="P:Proveedores.API.Models.UsuarioDto.Id">
+            <example>6728438f2f464d00ee9ae80c</example>
+        </member>
+        <member name="P:Proveedores.API.Models.UsuarioDto.Nombre">
+            <example>Alfredo Areyanes</example>
+        </member>
+        <member name="P:Proveedores.API.Models.UsuarioDto.Email">
+            <example>alfredo@gmail.com</example>
+        </member>
+        <member name="P:Proveedores.API.Models.UsuarioDto.Activo">
+            <example>true</example>
+        </member>
+        <member name="P:Proveedores.API.Models.UsuarioDto.Roles">
+            <example>usuario,analista</example>
+        </member>
+        <member name="T:Proveedores.API.Models.UsuarioUpdateRequest">
+            <summary>
+            Parámetros para actualizar un usuario.
+            </summary>    
+        </member>
+        <member name="P:Proveedores.API.Models.UsuarioUpdateRequest.Id">
+            <example>6728438f2f464d00ee9ae80c</example>
+        </member>
+        <member name="P:Proveedores.API.Models.UsuarioUpdateRequest.Nombre">
+            <example>Alfredo Areyanes</example>
+        </member>
+        <member name="P:Proveedores.API.Models.UsuarioUpdateRequest.Email">
+            <example>alfredo@gmail.com</example>
+        </member>
+        <member name="P:Proveedores.API.Models.UsuarioUpdateRequest.Activo">
+            <example>true</example>
+        </member>
+        <member name="P:Proveedores.API.Models.UsuarioUpdateRequest.Roles">
+            <example>usuario,analista</example>
+        </member>
+    </members>
+</doc>

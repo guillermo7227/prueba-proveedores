@@ -1,0 +1,35 @@
+Prueba API Proveedores
+
+La api cuenta con:
+
+- Autenticación JWT
+- Autorización por roles
+- Documentación Swagger
+- Entity framework conectado a MongoDB
+- Tests con xUnit
+
+
+-------------------------
+-- Cómo correr la app ---
+-------------------------
+
+1. En terminal, ejecutar 
+    |> docker compose up --build -d
+2. Ejecutar peticiones a http://localhost:5001/api
+3. Iniciar sesión con una petición POST al endpoint: http://localhost:5001/api/auth/login
+   con el cuerpo JSON:
+   {
+        "email": "superuser@example.com",
+        "password": "123+."
+   }
+4. La UI de swagger está en: http://localhost:5001/swagger/index.html
+
+
+---------------------------
+-- Cómo correr los tests --
+---------------------------
+
+1. Ubicarse con la terminal en la carpeta raíz del proyecto Proveedores.Tests
+2. Correr el comando
+    |> dotnet test
+   

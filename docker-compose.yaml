@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  my-api:
+    image: proveedores-api
+    build:
+      context: ./Proveedores.API
+      dockerfile: Dockerfile
+    ports:
+      - "5001:8080"
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodbdata:/data/db
+volumes:
+  mongodbdata:
